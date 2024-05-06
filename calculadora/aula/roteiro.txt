@@ -1,0 +1,37 @@
+Roteiro da Aula
+
+Site de pacotes do Dart:  pub.dev
+
+1 - Instalar as ferramentas de desenvolvimento
+    1.1 - Instalar o pacote: pub
+2 - Instalar no VS Code as Extensões de desenvolvimento
+3 - Explicar os fundamentos do VS Code para criar projetos
+
+4 - Estrutura do primeiro projeto:
+    4.1 - Criar a pasta teste
+    4.2 - Criar a pasta fundamento
+    4.3 - Criar a pasta calculadora
+    4.4 - Criar o projeto Dart -> Console Aplication -> calculadora
+    4.5 - Apagar os arquivos gerados automaticamente no projeto chamado calculadora*.*
+    4.6 - Explicar a estrutura do Projeto em Dart:
+        4.6.1 - Pasta: bin
+        4.6.3 - Pasta: lib
+        4.6.3 - Pasta: test
+            4.6.3.1 - Todo arquivo da pasta test deve ter o sufixo: _test
+                      para o VS Code entender que trata-se de um arquivo de teste.
+        4.7 - Explicar sobre o arquivo: pubspec.yaml (dependência dev teste) 
+
+5 - Criar o segundo projeto de fundamentos: Simular carrinho com item de uma venda
+    5.1 - Os testes devem ser Agrupados, usar o comando group().
+  
+    Criar o arquivo de teste a partir da classe de negocio, selecionando-a 
+    e acionar o Menu poup -> go to test. 
+
+6 - Após finalizar todos os métodos de teste dos dois projetos:
+    6.1 - Ensinar como executar todos os testes de uma única vez, simulando o teste de Integração:
+        6.1 - Execunar na console o comando: dart run test
+
+
+
+
+
