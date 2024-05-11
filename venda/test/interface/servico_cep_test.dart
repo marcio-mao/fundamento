@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 import 'package:venda/interface/servico_cep.dart';
@@ -72,6 +72,23 @@ void main() {
       final enderecoData = json.decode(enderecoResultado);
       // Verificação
       expect(enderecoData['erro'], true);
+    });
+    test('Deve testar cep invalido com numero de digitos diferente de 8',
+        () async {
+      // Preparação
+      final cep = "12345"; // 6 dígitos
+      // Execução
+      final int rc;
+      final headers = {
+        'Content-type': 'application/json',
+        'Accept': 'application/json',
+      };
+
+      final result = await get(Uri.parse('https://viacep.com.br/ws/$cep/json/'),
+          headers: headers);
+      rc = result.statusCode;
+      // Verificação
+      expect(rc, 400);
     });
   });
 }
