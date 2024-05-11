@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 import 'package:venda/interface/servico_cep.dart';
@@ -35,6 +37,18 @@ void main() {
       final enderecoResultado = servicoCep.obterEndereco('69077795');
       // Verificação
       expect(enderecoResultado, endereco);
+    });
+    test('Deve verificar se o endereço é do Amazonas', () {
+      // Preparação
+      when(() => servicoCep.obterEndereco('69077795')).thenReturn(endereco);
+      // Execução
+      final enderecoResultado = servicoCep.obterEndereco('69077795');
+      // Transformar a String que está no formatoJSO para a estrutura tipo Map
+      // Dessa forma terá acesso a cada campo do endereço
+      final enderecoData = json.decode(enderecoResultado);
+      print(enderecoData.toString());
+      // Verificação
+      expect(enderecoData['uf'], 'AM');
     });
   });
 }
