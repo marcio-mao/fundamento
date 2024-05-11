@@ -43,12 +43,35 @@ void main() {
       when(() => servicoCep.obterEndereco('69077795')).thenReturn(endereco);
       // Execução
       final enderecoResultado = servicoCep.obterEndereco('69077795');
-      // Transformar a String que está no formatoJSO para a estrutura tipo Map
+      // Transformar a String que está no formato JSON para a estrutura tipo Map
       // Dessa forma terá acesso a cada campo do endereço
       final enderecoData = json.decode(enderecoResultado);
       print(enderecoData.toString());
       // Verificação
       expect(enderecoData['uf'], 'AM');
+    });
+    test('Deve verificar se o endereço é de Manaus', () {
+      // Preparação
+      when(() => servicoCep.obterEndereco('69077795')).thenReturn(endereco);
+      // Execução
+      final enderecoResultado = servicoCep.obterEndereco('69077795');
+      final enderecoData = json.decode(enderecoResultado);
+      // Verificação
+      expect(enderecoData['localidade'], 'Manaus');
+    });
+    test('Deve verificar se CEP é inválido', () {
+      // Preparação
+      endereco = '''
+{
+  "erro": true
+}
+''';
+      when(() => servicoCep.obterEndereco('12345678')).thenReturn(endereco);
+      // Execução
+      final enderecoResultado = servicoCep.obterEndereco('12345678');
+      final enderecoData = json.decode(enderecoResultado);
+      // Verificação
+      expect(enderecoData['erro'], true);
     });
   });
 }
