@@ -23,9 +23,9 @@ Para executar (run):
 - Clicar em Run, na linha anterior ao "void main()"
 
 - ou ir pelo ícone de teste ("copinho" de Becker)
-  Comandos da biblioteca test:
-  ![https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png](https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png)
+
+Comandos da biblioteca test:
+
+![ver em: https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png](https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png)
 
 Fonte: https://invertase.io/blog/assertions-in-dart-and-flutter-tests-an-ultimate-cheat-sheet/
-
-
