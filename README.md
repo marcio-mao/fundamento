@@ -11,7 +11,7 @@ Pre-instalações:
 
 - Instalar o dart-sdk em https://dart.dev/get-dart
 - Instalar o VSCODE em https://code.visualstudio.com/download
-- Baixar as extensões: Dart, json (ZainChen), REST Client
+- Baixar as extensões: Dart, json (ZainChen), REST Client (Huachao Mao)
 - Atualizar as dependências no arquivo pubspec.yaml (usando seinha pra baixo) dos respectivos projetos
 
 Para executar (run):
