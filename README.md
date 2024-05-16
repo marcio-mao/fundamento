@@ -18,7 +18,12 @@ Para executar (run):
 
 - Abrir [arquivo]_test.dart, na pasta test correspondente.
 
-​         Ex. calculadora/test/calculadora_test.dart
+​                    Ex. calculadora/test/calculadora_test.dart
 
 - Clicar em Run, na linha anterior ao "void main()"
-- ou ir pelo ícone de teste (copo de Becker)
+- ou ir pelo ícone de teste ("copinho" de Becker)
+  
+  Comandos da biblioteca test:
+
+![](https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png)
+Fonte: https://invertase.io/blog/assertions-in-dart-and-flutter-tests-an-ultimate-cheat-sheet/
