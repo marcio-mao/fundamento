@@ -1,4 +1,4 @@
-Fundamentos de Teste Unitário usando a linguagem DART
+**<u>Fundamentos de Teste Unitário usando a linguagem DART</u>**
 
 - 1a. aula - usando a classe calculadora
 - 2a. aula - usando a classe venda
@@ -21,9 +21,11 @@ Para executar (run):
 ​                    Ex. calculadora/test/calculadora_test.dart
 
 - Clicar em Run, na linha anterior ao "void main()"
-- ou ir pelo ícone de teste ("copinho" de Becker)
-  
-  Comandos da biblioteca test:
 
-![](https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png)
+- ou ir pelo ícone de teste ("copinho" de Becker)
+  Comandos da biblioteca test:
+  ![https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png](https://cms.invertase.io/wp-content/uploads/2023/03/cheat-sheet.png)
+
 Fonte: https://invertase.io/blog/assertions-in-dart-and-flutter-tests-an-ultimate-cheat-sheet/
+
+
