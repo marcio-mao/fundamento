@@ -37,26 +37,26 @@ Content-Type: application/json
 ###
 
 // Obter usuário pelo ID
-GET http://localhost:8080/user/11
+GET http://10.0.0.103:8080/user/18
 Content-Type: application/json
 ###
 
 // Alterar usuário pelo ID
 // OBS: obrigado preencher o campo ID
-PUT http://localhost:8080/user 
+PUT http://10.0.0.103:8080/user 
 Content-Type: application/json
 // OBS: É necessário pular uma linha, quando existir um corpo (body) 
 
 {
-  "id": 11,
-  "nome": "Marcia Almeida",
-  "login": "marcia.almeida",
-  "email": "marcia.almeida@gmail.com",
-  "senha": "marcia123"
+  "id": 18,
+  "nome": "Marcio Amoedo da Silva",
+  "login": "marcio.amoedo",
+  "email": "marcio.mao.am@gmail.com",
+  "senha": "1842"
 }
 ###
 // Obter usuário pelo ID
-GET http://localhost:8080/user/11
+GET http://10.0.0.103:8080/user/18
 Content-Type: application/json
 ###
 // Deletar usuário pelo ID
@@ -68,7 +68,7 @@ GET http://localhost:8080/user/list
 Content-Type: application/json
 ###
 // Validar Usuário pelo Login e Senha
-POST http://localhost:8080/user/validarLogin/admin/123123
+POST http://10.0.0.103:8080/user/validarLogin/marcio/12343
 Content-Type: application/json
 ###
 
