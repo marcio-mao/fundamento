@@ -119,6 +119,21 @@ void main() {
         //Assert
         expect(resultadoData['login'], login);
       });
+
+      test('Deve verificar usuário de ID foi deletado', () async {
+        //Arrange
+        final delId = 42; // ID invalido
+
+        //Act
+        resposta = (await delete(
+            Uri.parse('http://10.0.0.103:8080/user/$delId'),
+            headers: headers));
+        resultado = utf8.decode(resposta.bodyBytes);
+        var resultadoData = json.decode(resultado);
+
+        //Assert
+        expect(resultadoData['status'], 1);
+      });
     }
   });
 }
