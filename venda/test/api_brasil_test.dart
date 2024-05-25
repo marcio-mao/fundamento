@@ -45,5 +45,20 @@ void main() {
       //Assert
       expect(resultadoData['message'], mensagemErro);
     });
+    test('Deve verificar a taxa SELIC', () async {
+      //Arrange
+
+      final resultadoEsperado = 10.5;
+
+      //Act
+      resposta = (await get(
+          Uri.parse("https://brasilapi.com.br/api/taxas/v1/SELIC"),
+          headers: headers));
+      resultado = utf8.decode(resposta.bodyBytes);
+      resultadoData = json.decode(resultado);
+
+      //Assert
+      expect(resultadoData['valor'], resultadoEsperado);
+    });
   });
 }
