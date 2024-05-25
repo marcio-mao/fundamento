@@ -30,5 +30,20 @@ void main() {
       //Assert
       expect(resultadoData['razao_social'], razaoSocial);
     });
+    test('Deve verificar CNPJ inválido', () async {
+      //Arrange
+      final cnpjInval = '10792928000814'; // cnpj inválido
+      final mensagemErro = 'CNPJ 10.792.928/0008-14 inválido.';
+
+      //Act
+      resposta = (await get(
+          Uri.parse("https://brasilapi.com.br/api/cnpj/v1/$cnpjInval"),
+          headers: headers));
+      resultado = utf8.decode(resposta.bodyBytes);
+      resultadoData = json.decode(resultado);
+
+      //Assert
+      expect(resultadoData['message'], mensagemErro);
+    });
   });
 }
