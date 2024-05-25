@@ -14,8 +14,8 @@ void main() {
       'Accept': 'application/json',
     };
   });
-  group('Deve testar os serviços de CNPJ da APiBrasil', () {
-    test('Deve verificar se Razão Social é do IFAM', () async {
+  group('Deve testar os serviços da APiBrasil', () {
+    test('Deve verificar a Razão Social, com o CNPJ do IFAM', () async {
       //Arrange
       final ifamCnpj = '10792928000614';
       final razaoSocial = 'INSTITUTO FEDERAL DO AMAZONAS';
