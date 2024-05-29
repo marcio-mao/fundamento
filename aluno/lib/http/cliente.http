@@ -1,0 +1,49 @@
+// Atenção: valor do atributo de retorno Status
+//Status: 1 - Sucesso;
+//        2 - Aviso;
+//        3 - Erro; 
+
+// Inserir Cliente
+POST http://10.0.0.103:8080/cliente 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2023203859_012",
+    "nome": "Teste400",
+    "cpf": "57014540297",
+    "email": "teste400@gmail.com"
+}
+
+// Utiliza-se obrigatoriamente no início da linha os simbolos: ###
+// para separar uma requisção da outra. 
+###
+
+// Listar todos os cliente em ordem alfabética pelo atributo nome
+GET http://10.0.0.103:8080/cliente/list 
+Content-Type: application/json
+###
+
+// Obter Cliente pelo ID
+GET http://10.0.0.103:8080/cliente/2023203859_10000
+Content-Type: application/json
+###
+
+// Alterar o Cliente pelo Id
+// OBS: obrigado preencher o atributo ID
+PUT http://10.0.0.103:8080/cliente 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2023203859_012",
+    "nome": "Teste400",
+    "cpf": "57014540297",
+    "email": "teste400@gmail.com"
+}
+###
+
+// Deletar o Cliente pelo ID
+DELETE http://10.0.0.103:8080/cliente/2023204776_001
+Content-Type: application/json
+###
