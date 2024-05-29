@@ -1,0 +1,112 @@
+// Atenção: valor do atributo de retorno Status
+//Status: 1 - Sucesso;
+//        2 - Aviso;
+//        3 - Erro; 
+
+// Listar todos os aluno em ordem alfabética pelo atributo nome
+GET http://10.0.0.103:8080/aluno/list 
+Content-Type: application/json
+###
+
+// Teste 01: Inserir Aluno com CPF válido
+POST http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2023204776_003",
+    "nome": "Marcio Amoedo",
+    "cpf": "41856961249",
+    "email": "2023204776@ifam.edu.br"
+}
+
+// Utiliza-se obrigatoriamente no início da linha os simbolos: ###
+// para separar uma requisção da outra. 
+###
+
+// Teste 02: Deve invalidar a inclusão de aluno com o mesmo Id
+POST http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2024123456_001",
+    "nome": "Benevaldo Gonçalves",
+    "cpf": "57014540297",
+    "email": "benevaldo@gmail.com"
+}
+###
+//  Teste 03: Invalidar Novo Aluno com CPF Inválido
+POST http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2024123456_002",
+    "nome": "Bruno Pereira",
+    "cpf": "12345678901",
+    "email": "bruno@gmail.com"
+}
+###
+
+// Teste 04: Deve invalidar na inclusão, um NOVO aluno com CPF válido com os campos nulos: nome ou email.
+POST http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2024123456_002",
+    "nome": null,
+    "cpf": "57014540297",
+    "email": "teste@gmail.com"
+}
+###
+
+// Teste 05: Deve obter Aluno pelo Id
+GET http://10.0.0.103:8080/aluno/2023204776_001
+Content-Type: application/json
+###
+
+// Teste 06: Deve verificar Aluno inexistente pelo Id
+GET http://10.0.0.103:8080/aluno/2024123456_200
+Content-Type: application/json
+###
+
+// Teste 07: Deve atualizar aluno existente com CPF válido
+PUT http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2024123456_001",
+    "nome": "Nicolas Gonçalves",
+    "cpf": "57014540297",
+    "email": "nicolas@gmail.com"
+}
+###
+
+// Teste 08: Deve invalidar atualização de aluno inexistente com CPF válido
+PUT http://10.0.0.103:8080/aluno 
+Content-Type: application/json
+// OBS: É necessário pular uma linha, quando existir um corpo (body) 
+
+{
+    "id":"2024123456_200",
+    "nome": "Maria Clara",
+    "cpf": "57014540297",
+    "email": "maria@gmail.com"
+}
+###
+
+// Teste 09: Deve invalidar exclusão de aluno inexistente
+DELETE http://10.0.0.103:8080/aluno/2024123456_200
+Content-Type: application/json
+###
+
+// Teste:10
+// Deve verificar a exclusão do Aluno existente
+// Deletar o Aluno pelo ID
+DELETE http://10.0.0.103:8080/aluno/2024123456_001
+Content-Type: application/json
+###
+
